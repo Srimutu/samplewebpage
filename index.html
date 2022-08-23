@@ -62,6 +62,9 @@ input[type=submit]:hover {
 
     		<label for="lname">Last Name</label>
     		<input type="text" id="lname" name="lastname" placeholder="Your last name..">
+			
+		<label for="email">E-MAIL</label>
+    		<input type="text" id="email" name="email" placeholder="Your email..">	
 
     		<label for="country">Country</label>
     		<select id="country" name="country">
@@ -73,10 +76,20 @@ input[type=submit]:hover {
     		<label for="subject">Subject</label>
     		<textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
 
+			
     		<input type="submit" value="Submit">
   		</form>
 		</div>
 	
+		
+<!-- Moengage attributes -->		
+		Moengage.add_first_name("fname");
+		Moengage.add_last_name("lname");
+		Moengage.add_email("email");
+		Moengage.add_country("country");
+		Moengage.add_subject("subject");
+		
+		
 	</body>
 
 </html>
