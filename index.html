@@ -77,9 +77,8 @@ input[type=submit]:hover {
     		<textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
 
 		<a href="ContactSubmit.html">	
-    		<input type="submit" value="Submit" action = document.querySelector(".btn1")>
+    		<input type="submit" value="Submit" class=btn1>
 		</a>
-	      	
   		</form>
 		</div>
 	
@@ -88,6 +87,7 @@ input[type=submit]:hover {
 
 <!-- Moengage attributes -->		
 		<script>
+		const but1 = document.querySelector(".btn1")
 		but1.addEventListener("click", function(){
 		Moengage.add_unique_user_id(UNIQUE_ID); 
 		Moengage.add_first_name(document.getElementById("fname").value);
