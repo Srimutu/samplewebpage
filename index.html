@@ -77,13 +77,15 @@ input[type=submit]:hover {
     		<textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
 
 		<a href="ContactSubmit.html">	
-    		<input type="submit" value="Submit">
+    		<input type="submit" value="Submit" action= >
 		</a>
-			
+	        const but1 = document.querySelector(".btn1")		
   		</form>
 		</div>
 	
 		
+		but1.addEventListener("click", function(){
+
 <!-- Moengage attributes -->		
 		<script>
 		
@@ -95,7 +97,7 @@ input[type=submit]:hover {
 		Moengage.add_subject(subject);
 		console.log(document.getElementById("fname").value);
 		</script>
-		
+		});
 	</body>
 
 </html>
