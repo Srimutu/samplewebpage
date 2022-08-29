@@ -87,6 +87,8 @@ input[type=submit]:hover {
 
 <!-- Moengage attributes -->		
 		<script>
+		console.log(document.getElementById("fname").value);
+			
 		const but1 = document.querySelector(".btn1");
 		but1.addEventListener("click", function(){
 		Moengage.add_unique_user_id(UNIQUE_ID); 
@@ -95,7 +97,7 @@ input[type=submit]:hover {
 		Moengage.add_email(document.getElementById("email").value);
 		Moengage.add_country(country);
 		Moengage.add_subject(subject);
-		console.log(document.getElementById("fname").value);
+	
 	});
 		</script>
 		
