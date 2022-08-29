@@ -50,7 +50,7 @@ input[type=submit]:hover {
 	</head>
 
 	<body>
-		<h1>This is a heading!<h1>
+		<h1>This is a heading!@!<h1>
 		<p style="color:Tomato;">This is a paragraph.</p>
 		<!--marquee> <p style="color:DodgerBlue;">Lets start rolling </p></marquee-->
 		<h3>Contact Form</h3>
@@ -80,8 +80,7 @@ input[type=submit]:hover {
     		<input type="submit" value="Submit" class=btn1>
 			
   		<!--/form-->
-		<button onclick="document.getElementById("fname").value,document.getElementById("email").value" class=btn2>Submit 2 </button>
-
+		<button onclick="document.getElementById('fname').value;document.getElementById('email').value;" class="btn2">Submit 2 </button>
 		</div>
 	
 		
@@ -93,12 +92,12 @@ input[type=submit]:hover {
 			
 		const but1 = document.querySelector(".btn2");
 		but1.addEventListener("click", function(){
-		Moengage.add_unique_user_id(UNIQUE_ID); 
+		Moengage.add_unique_user_id(document.getElementById("email").value);
 		Moengage.add_first_name(document.getElementById("fname").value);
-		Moengage.add_last_name(lname);
+		Moengage.add_last_name(document.getElementById("lname").value);
 		Moengage.add_email(document.getElementById("email").value);
-		Moengage.add_country(country);
-		Moengage.add_subject(subject);
+		Moengage.add_user_attribute("country", document.getElementById("country").value);
+		Moengage.add_user_attribute("subject", document.getElementById("subject").value);
 	
 	});
 		</script>
