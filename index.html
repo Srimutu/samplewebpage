@@ -80,7 +80,7 @@ input[type=submit]:hover {
     		<input type="submit" value="Submit" class=btn1>
 			
   		<!--/form-->
-		<button onclick="document.getElementById('fname').value;document.getElementById('email').value;" class="btn2">Submt 2 </button>
+		<button onclick="document.getElementById('fname').value;document.getElementById('email').value;" class="btn2" id="btn2">Submt 2 </button>
 		</div>
 	
 		
@@ -92,12 +92,15 @@ input[type=submit]:hover {
 			
 		const but1 = document.querySelector(".btn2");
 		but1.addEventListener("click", function(){
+     		document.getElementById("btn2").style.color ="red";
 		Moengage.add_unique_user_id(document.getElementById("email").value);
 		Moengage.add_first_name(document.getElementById("fname").value);
 		Moengage.add_last_name(document.getElementById("lname").value);
 		Moengage.add_email(document.getElementById("email").value);
 		Moengage.add_user_attribute("country", document.getElementById("country").value);
 		Moengage.add_user_attribute("subject", document.getElementById("subject").value);
+		Moengage.destroy_session();
+	
 	
 	});
 		</script>
