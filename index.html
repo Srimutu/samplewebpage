@@ -98,8 +98,15 @@ input[type=submit]:hover {
 		Moengage.add_email(document.getElementById("email").value);
 		Moengage.add_user_attribute("country", document.getElementById("country").value);
 		Moengage.add_user_attribute("subject", document.getElementById("subject").value);
+			
+		Moengage.track_event("Sri_Event_2" ,   //track event
+				     {
+			 		"quantity":2,
+ 					"product_name":"Ipad mini",
+					"price": 599.99,
+ 					"prodcut_id": "Sri-01"
 	
-	});
+				      });
 		</script>
 		
 	</body>
