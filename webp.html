@@ -6,79 +6,75 @@
 </head>
 
 <body>
- <script type="text/javascript">
-    (function(i, s, o, g, r, a, m, n) {
-      i.moengage_object = r;
-      t = {};
-      q = function(f) {
-        return function() {
-          (i.moengage_q = i.moengage_q || []).push({
-            f: f,
-            a: arguments
-          })
-        }
-      };
-      f = ['track_event', 'add_user_attribute', 'add_first_name', 'add_last_name', 'add_email', 'add_mobile', 'add_user_name', 'add_gender', 'add_birthday', 'destroy_session', 'add_unique_user_id', 'moe_events', 'call_web_push', 'track',
-        'location_type_attribute'
-      ], h = {
-        onsite: ["getData", "registerCallback"]
-      };
-      for (k in f) {
-        t[f[k]] = q(f[k])
-      }
-      for (k in h)
-        for (l in h[k]) {
-          null == t[k] && (t[k] = {}), t[k][h[k][l]] = q(k + "." + h[k][l])
-        }
-      a = s.createElement(o);
-      m = s.getElementsByTagName(o)[0];
-      a.async = 1;
-      a.src = g;
-      m.parentNode.insertBefore(a, m);
-      i.moe = i.moe || function() {
-        n = arguments[0];
-        return t
-      };
-      a.onload = function() {
-        if (n) {
-          i[r] = moe(n)
-        }
-      }
-    })(window, document, 'script', 'https://cdn.moengage.com/webpush/moe_webSdk.min.latest.js', 'Moengage')
-
-
-    Moengage = moe({
-      app_id: "FM6H6BZQGCY4WEUAXTKAYU3X",
-      debug_logs: 1
-    });
-
-    Moengage.onsite.registerCallback("webPersTest", function(err, data) {
-    if (err) {
-    // Handle error case here
-    // We could get error for various reasons, like
-    // network issues, campaigns not present for a particular tag
-    return console.error('Error from moengage:', err);
-    }
-    console.log('Data for campaign:', data);
-    
-    var payload = data.payload; // Campaign payload defined during campaign creation
-    
-    var impTracker = data.imp; // Function, you can call impTracker() to send impression stats for a campaign back to MoEngage. Call this after you have successfully rendered the HTML as per the payload provided.
-    
-    var clickTracker = data.click({widget_id:"sample_widget_id"}); // Function, you can call clickTracker() to send click stats for a campaign back to MoEngage. Call this when the user clicks on the desired section of the website. Passing widget_id is not mandatory and should only be used in case you want to differentiate the clicks between 2 different widgets of the Web Personalization Campaign.
-    });
-  </script>
-	
-	
-  <strong>
-    <e> Thank you for submitting the data </e>
-  </strong>
+ 
+   <e> Thank you for submitting the data </e>
 
   <h1> Your Data </h1>
 	<h2> NAME:  <span id="output"> </span>  </h2>
 
 <script>
-	    document.getElementById('output').innerHTML = payload.name;
+
+  (function(i, s, o, g, r, a, m, n) {
+    i.moengage_object = r;
+    t = {};
+    q = function(f) {
+      return function() {
+        (i.moengage_q = i.moengage_q || []).push({
+          f: f,
+          a: arguments
+        })
+      }
+    };
+    f = ['track_event', 'add_user_attribute', 'add_first_name', 'add_last_name', 'add_email', 'add_mobile', 'add_user_name', 'add_gender', 'add_birthday', 'destroy_session', 'add_unique_user_id', 'moe_events', 'call_web_push', 'track',
+      'location_type_attribute'
+    ], h = {
+      onsite: ["getData", "registerCallback"]
+    };
+    for (k in f) {
+      t[f[k]] = q(f[k])
+    }
+    for (k in h)
+      for (l in h[k]) {
+        null == t[k] && (t[k] = {}), t[k][h[k][l]] = q(k + "." + h[k][l])
+      }
+    a = s.createElement(o);
+    m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m);
+    i.moe = i.moe || function() {
+      n = arguments[0];
+      return t
+    };
+    a.onload = function() {
+      if (n) {
+        i[r] = moe(n)
+      }
+    }
+  })(window, document, 'script', 'https://cdn.moengage.com/webpush/moe_webSdk.min.latest.js', 'Moengage')
+
+
+  Moengage = moe({
+    app_id: "FM6H6BZQGCY4WEUAXTKAYU3X",
+    debug_logs: 1
+  });
+
+  Moengage.onsite.registerCallback("webPersTest", function(err, data) {
+  if (err) {
+  // Handle error case here
+  // We could get error for various reasons, like
+  // network issues, campaigns not present for a particular tag
+  return console.error('Error from moengage:', err);
+  }
+  console.log('Data for campaign:', data);
+  
+  var payload = data.payload; // Campaign payload defined during campaign creation
+  
+  var impTracker = data.imp; // Function, you can call impTracker() to send impression stats for a campaign back to MoEngage. Call this after you have successfully rendered the HTML as per the payload provided.
+  
+  var clickTracker = data.click({widget_id:"sample_widget_id"}); // Function, you can call clickTracker() to send click stats for a campaign back to MoEngage. Call this when the user clicks on the desired section of the website. Passing widget_id is not mandatory and should only be used in case you want to differentiate the clicks between 2 different widgets of the Web Personalization Campaign.
+  });
+  document.getElementById('output').innerHTML = payload.name;
 
 	</script>
 	
