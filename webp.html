@@ -68,7 +68,7 @@
   }
   console.log('Data for campaign:', data);
   
-  var payload = data.payload; // Campaign payload defined during campaign creation
+  let payload = data.payload; // Campaign payload defined during campaign creation
   
   var impTracker = data.imp; // Function, you can call impTracker() to send impression stats for a campaign back to MoEngage. Call this after you have successfully rendered the HTML as per the payload provided.
   
