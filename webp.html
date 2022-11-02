@@ -2,7 +2,11 @@
 
 <head>
   <title> Sample webpage for moengage integration </title>
-  <script type="text/javascript">
+ 
+</head>
+
+<body>
+ <script type="text/javascript">
     (function(i, s, o, g, r, a, m, n) {
       i.moengage_object = r;
       t = {};
@@ -64,16 +68,14 @@
     var clickTracker = data.click({widget_id:"sample_widget_id"}); // Function, you can call clickTracker() to send click stats for a campaign back to MoEngage. Call this when the user clicks on the desired section of the website. Passing widget_id is not mandatory and should only be used in case you want to differentiate the clicks between 2 different widgets of the Web Personalization Campaign.
     });
   </script>
-</head>
-
-<body>
-
+	
+	
   <strong>
     <e> Thank you for submitting the data </e>
   </strong>
 
   <h1> Your Data </h1>
-	<h2> NAM_E:  <span id="output"> </span>  </h2>
+	<h2> NAME:  <span id="output"> </span>  </h2>
 
 <script>
 	    document.getElementById('output').innerHTML = payload.name;
