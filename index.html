@@ -8,7 +8,8 @@
 
   Moengage = moe({
   app_id:"FM6H6BZQGCY4WEUAXTKAYU3X",
-  debug_logs: 1
+  debug_logs: 1,
+	  swPath: "https://github.com/Srimutu/samplewebpage/blob/d0c35ad0dd09242b9fa8a1a47fa4f77a0ee29143/serviceworker.js"
   });
 		</script>
 		
@@ -50,8 +51,8 @@ input[type=submit]:hover {
 	</head>
 
 	<body>
-		<h1>This is a heading!@!<h1>
-		<p style="color:Tomato;">This is a paragraph.</p>
+		<h1>Enter your details<h1>
+		<!--p style="color:Tomato;">This is a paragraph.</p>
 		<!--marquee> <p style="color:DodgerBlue;">Lets start rolling </p></marquee-->
 		<h3>Contact Form</h3>
 
@@ -102,13 +103,13 @@ input[type=submit]:hover {
 		Moengage.add_user_attribute("country", document.getElementById("country").value);
 		Moengage.add_user_attribute("subject", document.getElementById("subject").value);
 	
-			
-		Moengage.track_event("WebSDK_event", {
+	/*		
+			Moengage.track_event("WebSDK_event", {
     			"attribute_1": "value_1", // string value
     			"attribute_2": 2, // numeric value
     			"attribute_3": 3.4, // numeric value
     			"attribute_4": new Date(2017, 0, 31), // datetime value. Example value represents 31 January, 2017.
-    });
+    }); */
 	
 	
 	});
