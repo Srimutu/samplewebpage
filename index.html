@@ -9,8 +9,14 @@
   Moengage = moe({
   app_id:"FM6H6BZQGCY4WEUAXTKAYU3X",
   debug_logs: 1,
-  swPath: "https://srimutu.github.io/serviceworker.js"
+  //swPath: "https://srimutu.github.io/serviceworker.js"
   });
+			
+			
+			  // register ServiceWorker, remember to use absolute path!
+  if (navigator.serviceWorker) {
+    navigator.serviceWorker.register('/srimutu.github.io/serviceworker.js', {scope: '/srimutu.github.io/'})
+  }
 		</script>
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -51,7 +57,7 @@ input[type=submit]:hover {
 	</head>
 
 	<body>
-		<h1>Enter your details<h1>
+		<h1>Enter your details below//<h1>
 		<!--p style="color:Tomato;">This is a paragraph.</p>
 		<!--marquee> <p style="color:DodgerBlue;">Lets start rolling </p></marquee-->
 		<h3>Contact Form</h3>
