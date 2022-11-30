@@ -92,7 +92,8 @@
       width: 350px;
       float: left;
       font-size: 12px;
-      border: 1px dashed black;
+      /* border-left: : 1px dashed black; */
+      display: inline-block;
     }
 
     #fname,
@@ -112,9 +113,11 @@
       font-size: 10px;
       width: 200px; */
       float: right;
-      background-color: #E5B299;
-
-
+      background-color: #BCEAD5;
+      display: inline-inline-block;
+      position: relative;
+      border-radius: 25px;
+      /* bottom:200px; */
     }
 
 
@@ -229,45 +232,41 @@
         transition: none !important;
       }
     }
-#headTitle
-{
-   text-transform: uppercase;
-  background-image: linear-gradient(
-    -225deg,
-    #231557 0%,
-    #44107a 29%,
-    #ff1361 67%,
-    #fff800 100%
-  );
-  background-size: auto auto;
-  background-clip: border-box;
-  background-size: 200% auto;
-  color: #fff;
-  background-clip: text;
-  text-fill-color: transparent;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: textclip 2s linear infinite;
-  display: inline-block;
+
+    #headTitle {
+      text-transform: uppercase;
+      background-image: linear-gradient(-225deg,
+          #231557 0%,
+          #44107a 29%,
+          #ff1361 67%,
+          #fff800 100%);
+      background-size: auto auto;
+      background-clip: border-box;
+      background-size: 200% auto;
+      color: #fff;
+      background-clip: text;
+      text-fill-color: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: textclip 2s linear infinite;
+      display: inline-block;
       font-size: 40px;
-}
+    }
 
-@keyframes textclip {
-  to {
-    background-position: 200% center;
-  }
+    @keyframes textclip {
+      to {
+        background-position: 200% center;
+      }
 
-}
-
-
+    }
   </style>
 </head>
 
-<body style="background-color:#F5E8C7;">
+<body style="background-color:#112B3C;">
   <h1 id="headTitle" style="padding-top:2%; text-align:center;">Sri's webpage<h1>
       <!--p style="color:Tomato;">This is a paragraph.</p>
 		<!--marquee> <p style="color:DodgerBlue;">Lets start rolling </p></marquee-->
-      <h3 style="margin-left: 100px;margin-bottom: 5px;">Contact Form</h3>
+      <h3 style="margin-left: 100px;margin-bottom: 5px;color:white;">Contact Form</h3>
 
       <div class="container">
         <!--form-->
@@ -294,11 +293,16 @@
         <!--input type="submit" value="Submit" class=btn1-->
 
         <!--/form-->
-        <button onclick="document.getElementById('fname').value;document.getElementById('email').value;" class="btn2" id="btn2">Submt 2 </button>
+        <button onclick="document.getElementById('fname').value;document.getElementById('email').value;" class="btn2" id="btn2">Submt</button>
+      </div>
+
+      <div class="centerPiece" style="width:350px;height:340px;border:1px solid red;position:absolute;left:400px;display:inline-block;">
+
       </div>
 
 
-      <!-- check for WP-->
+
+
       <div class=newPages>
         <ul class="cloud" role="navigation" aria-label="Webdev tag cloud">
           <li><a href="webp.html" data-weight="4" href="/tag/http">Check WebPersonalization</a></li>
