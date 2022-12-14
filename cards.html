@@ -93,7 +93,9 @@
           fontFamily: "", // any font family which is added to the website
           backgroundColor: "#fff", // any valid CSS color format
         },
-
+var notiCount = document.getElementById('moe-floating-notifications');
+      if (notiCount != 0)
+    {
         webFloating: {
           enable: true, // false by default
           icon: "https://app-cdn.moengage.com/sdk/bell-icon.svg", // absolute path to the icon image. by default, our icon will be used.
@@ -103,7 +105,7 @@
           iconBackgroundColor: "#D9DFED",
           fontFamily: "Audiowide"
         
-        },
+        } },
         mWebFloating: {
           enable: false, // false by default
           icon: "https://app-cdn.moengage.com/sdk/bell-icon.svg", // absolute path to the icon image. by default, our icon will be used.
