@@ -9,7 +9,7 @@
  
    <e> Thank you for submitting the data </e>
 
-  <h1> Your Data1 </h1>
+  <h1> Your Data </h1>
 	<h2> username:  <span id="output1"> </span>  </h2>
 	<h2> first-name:  <span id="output2"> </span>  </h2>
 	<h2> last-name:  <span id="output3"> </span>  </h2>
@@ -88,7 +88,7 @@
   var clickTracker = data.click({widget_id:"sample_widget_id"}); // Function, you can call clickTracker() to send click stats for a campaign back to MoEngage. Call this when the user clicks on the desired section of the website. Passing widget_id is not mandatory and should only be used in case you want to differentiate the clicks between 2 different widgets of the Web Personalization Campaign.
  
 document.getElementById('output1').innerHTML = payload.username;
-document.getElementById('output2').innerHTML = payload.(first-name);
+document.getElementById('output2').innerHTML = payload.first-name;
 document.getElementById('output3').innerHTML = payload.last-name;
 document.getElementById('output4').innerHTML = payload.avatar-url;
 document.getElementById('output5').innerHTML = payload.email;
