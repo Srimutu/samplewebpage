@@ -10,7 +10,20 @@
    <e> Thank you for submitting the data </e>
 
   <h1> Your Data </h1>
-	<h2> NAME:  <span id="output"> </span>  </h2>
+	<h2> username:  <span id="output1"> </span>  </h2>
+	<h2> first-name:  <span id="output2"> </span>  </h2>
+	<h2> last-name:  <span id="output3"> </span>  </h2>
+	<h2> avatar-url:  <span id="output4"> </span>  </h2>
+	<h2> email:  <span id="output5"> </span>  </h2>
+	<h2> phone-number:  <span id="output6"> </span>  </h2>
+	<h2> city:  <span id="output7"> </span>  </h2>
+	<h2> gender:  <span id="output8"> </span>  </h2>
+	<h2> updated-at:  <span id="output9"> </span>  </h2>
+	<h2> created-at:  <span id="output10"> </span>  </h2>
+	<h2> article_heroimage:  <span id="output11"> </span>  </h2>
+	<h2> article_url:  <span id="output12"> </span>  </h2>
+	<h2> article_title:  <span id="output13"> </span>  </h2>
+
 
 <script>
 
@@ -55,11 +68,11 @@
 
 
   Moengage = moe({
-    app_id: "FM6H6BZQGCY4WEUAXTKAYU3X",
+    app_id: "F4F88N5DMNG2QRSSDGFVRPTT",
     debug_logs: 1
   });
 
-  Moengage.onsite.registerCallback("webPersTest", function(err, data) {
+  Moengage.onsite.registerCallback("varun_test_tag", function(err, data) {
   if (err) {
   // Handle error case here
   // We could get error for various reasons, like
@@ -74,7 +87,19 @@
   
   var clickTracker = data.click({widget_id:"sample_widget_id"}); // Function, you can call clickTracker() to send click stats for a campaign back to MoEngage. Call this when the user clicks on the desired section of the website. Passing widget_id is not mandatory and should only be used in case you want to differentiate the clicks between 2 different widgets of the Web Personalization Campaign.
  
-	    document.getElementById('output').innerHTML = payload.name;
+document.getElementById('output1').innerHTML = payload.username;
+document.getElementById('output2').innerHTML = payload.first-name;
+document.getElementById('output3').innerHTML = payload.last-name;
+document.getElementById('output4').innerHTML = payload.avatar-url;
+document.getElementById('output5').innerHTML = payload.email;
+document.getElementById('output6').innerHTML = payload.phone-number;
+document.getElementById('output7').innerHTML = payload.city;
+document.getElementById('output8').innerHTML = payload.gender;
+document.getElementById('output9').innerHTML = payload.updated-at;
+document.getElementById('output10').innerHTML = payload.created-at;
+document.getElementById('output11').innerHTML = payload.article_heroimage;
+document.getElementById('output12').innerHTML = payload.article_url;
+document.getElementById('output13').innerHTML = payload.article_title;
 
 	  
  });
