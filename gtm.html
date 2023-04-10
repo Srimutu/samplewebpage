@@ -1,0 +1,309 @@
+<html>
+
+<head>
+	<!-- Google tag (gtag.js) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    input[type=text],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      resize: vertical;
+    }
+
+    input[type=submit] {
+      background-color: #04AA6D;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+      background-color: #45a049;
+    }
+
+    .container {
+
+      padding: 20px;
+      width: 350px;
+      float: left;
+      font-size: 12px;
+      /* border-left: : 1px dashed black; */
+      display: inline-block;
+    }
+
+    #fname,
+    #lname,
+    #email,
+    #country,
+    #subject {
+      border-bottom: 2px solid black;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+    }
+
+    .newPages {
+      /* border-radius: 10px;
+      margin-right: 70px;
+      font-size: 10px;
+      width: 200px; */
+      float: right;
+      background-color: #BCEAD5;
+      display: inline-inline-block;
+      position: relative;
+      border-radius: 25px;
+      /* bottom:200px; */
+    }
+
+
+
+    ul.cloud {
+      list-style: none;
+      padding-left: 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      line-height: 2.75rem;
+      width: 450px;
+    }
+
+    ul.cloud a {
+      /*
+     Not supported by any browser at the moment :(
+     --size: attr(data-weight number);
+     */
+      --size: 4;
+      --color: #a33;
+      color: var(--color);
+      font-size: calc(var(--size) * 0.25rem + 0.5rem);
+      display: block;
+      padding: 0.125rem 0.25rem;
+      position: relative;
+      text-decoration: none;
+      /*
+     For different tones of a single color
+     opacity: calc((15 - (9 - var(--size))) / 15);
+     */
+    }
+
+    ul.cloud a[data-weight="1"] {
+      --size: 1;
+    }
+
+    ul.cloud a[data-weight="2"] {
+      --size: 2;
+    }
+
+    ul.cloud a[data-weight="3"] {
+      --size: 3;
+    }
+
+    ul.cloud a[data-weight="4"] {
+      --size: 4;
+    }
+
+    ul.cloud a[data-weight="5"] {
+      --size: 6;
+    }
+
+    ul.cloud a[data-weight="6"] {
+      --size: 8;
+    }
+
+    ul.cloud a[data-weight="7"] {
+      --size: 10;
+    }
+
+    ul.cloud a[data-weight="8"] {
+      --size: 13;
+    }
+
+    ul.cloud a[data-weight="9"] {
+      --size: 16;
+    }
+
+    ul[data-show-value] a::after {
+      content: " (" attr(data-weight) ")";
+      font-size: 1rem;
+    }
+
+    ul.cloud li:nth-child(2n+1) a {
+      --color: #181;
+    }
+
+    ul.cloud li:nth-child(3n+1) a {
+      --color: #33a;
+    }
+
+    ul.cloud li:nth-child(4n+1) a {
+      --color: #c38;
+    }
+
+    ul.cloud a:focus {
+      outline: 1px dashed;
+    }
+
+    ul.cloud a::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 0;
+      height: 100%;
+      background: var(--color);
+      transform: translate(-50%, 0);
+      opacity: 0.15;
+      transition: width 0.25s;
+    }
+
+    ul.cloud a:focus::before,
+    ul.cloud a:hover::before {
+      width: 100%;
+    }
+
+    @media (prefers-reduced-motion) {
+      ul.cloud * {
+        transition: none !important;
+      }
+    }
+
+    #headTitle {
+      text-transform: uppercase;
+      background-image: linear-gradient(-225deg,
+          #231557 0%,
+          #44107a 29%,
+          #ff1361 67%,
+          #fff800 100%);
+      background-size: auto auto;
+      background-clip: border-box;
+      background-size: 200% auto;
+      color: #fff;
+      background-clip: text;
+      text-fill-color: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: textclip 2s linear infinite;
+      display: inline-block;
+      font-size: 40px;
+    }
+
+    @keyframes textclip {
+      to {
+        background-position: 200% center;
+      }
+
+    }
+  </style>
+	
+</head>
+
+<body style="background-color:#112B3C;">
+  <h1 id="headTitle" style="padding-top:2%; text-align:center;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<h1>
+      <!--p style="color:Tomato;">This is a paragraph.</p>
+		<!--marquee> <p style="color:DodgerBlue;">Lets start rolling </p></marquee-->
+      <h3 style="margin-left: 100px;margin-bottom: 5px;color:white;">Contact Form</h3>
+
+      <div class="container">
+        <!--form-->
+        <!--label for="fname">First Name</label-->
+        <input type="text" id="fname" name="firstname" placeholder="Your name.." style="height:30px">
+
+        <!--label for="lname">Last Name</label-->
+        <input type="text" id="lname" name="lastname" placeholder="Your last name.." style="height:30px">
+
+        <!--label for="email">E-MAIL</label-->
+        <input type="text" id="email" name="email" placeholder="Your email.." style="height:30px">
+
+        <!--label for="country">Country</label-->
+        <select id="country" name="country">
+          <option value="australia">Australia</option>
+          <option value="canada">Canada</option>
+          <option value="usa">USA</option>
+        </select>
+
+        <!--label for="subject">Subject</label-->
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:30px"></textarea>
+
+
+        <!--input type="submit" value="Submit" class=btn1-->
+
+        <!--/form-->
+        <button onclick="document.getElementById('fname').value;document.getElementById('email').value;" class="btn2" id="btn2">Submt</button>
+      </div>
+
+      <div class="centerPiece" style="width:350px;height:340px;border:1px solid red;position:absolute;left:400px;display:inline-block;">
+
+      </div>
+
+
+
+
+      <div class=newPages>
+        <ul class="cloud" role="navigation" aria-label="Webdev tag cloud">
+          <li><a href="webp.html" data-weight="4" >Check WebPersonalization</a></li>
+          <li><a href="productPreview.html" data-weight="2">Product Preview Page</a></li>
+          <li><a href="spinWheel.html" data-weight="5">Spin Wheel</a></li>
+          <li><a data-weight="8" href="scratchToWin.html">Scratch to Win</a></li>
+          <li><a data-weight="6" href="slotMachine.html">Slot Machine</a></li>
+          <li><a data-weight="4" href="dpmUserAffinity.html">DPM User Affinity</a></li>
+          <li><a data-weight="5" href="cards.html">Cards</a></li>
+          <li><a data-weight="6" href="countdown.html">Count Down</a></li>
+          <li><a data-weight="3" href="/tag/rest">item 9</a></li>
+          <li><a data-weight="9" href="/tag/javascript">item 10</a></li>
+          <li><a data-weight="3" href="/tag/animation">item 11</a></li>
+          <li><a data-weight="7" href="/tag/react">item 12</a></li>
+          <li><a data-weight="8" href="/tag/css">item 13</a></li>
+          <li><a data-weight="1" href="/tag/cache">item 14</a></li>
+          <li><a data-weight="3" href="/tag/less">item 15</a></li>
+        </ul>
+      </div>
+
+
+      <!-- Moengage attributes -->
+      <script>
+        console.log(document.getElementById("fname").value);
+
+        const but1 = document.querySelector(".btn2");
+        but1.addEventListener("click", function() {
+          document.getElementById("btn2").style.color = "red";
+          Moengage.add_unique_user_id(document.getElementById("email").value);
+          Moengage.add_first_name(document.getElementById("fname").value);
+          Moengage.add_last_name(document.getElementById("lname").value);
+          Moengage.add_email(document.getElementById("email").value);
+          Moengage.add_user_attribute("country", document.getElementById("country").value);
+          Moengage.add_user_attribute("subject", document.getElementById("subject").value);
+
+          /*
+			Moengage.track_event("WebSDK_event", {
+    			"attribute_1": "value_1", // string value
+    			"attribute_2": 2, // numeric value
+    			"attribute_3": 3.4, // numeric value
+    			"attribute_4": new Date(2017, 0, 31), // datetime value. Example value represents 31 January, 2017.
+    }); */
+
+
+        });
+      </script>
+
+
+</body>
+
+</html>
