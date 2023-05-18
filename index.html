@@ -58,6 +58,12 @@
       debug_logs: 0,
       swPath: "serviceworker.js"
     });
+	  
+	  MoEngage moEngage = new MoEngage.Builder(this, "XXXXXXXXXX")
+            .configureNotificationMetaData(new NotificationConfig(R.drawable.small_icon, R.drawable.large_icon))
+            .build();
+    MoEngage.initialiseDefaultInstance(moEngage);
+	  
   </script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
