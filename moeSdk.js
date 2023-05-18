@@ -39,7 +39,7 @@
 
 
     Moengage = moe({
-      app_id: "DNBVW45PTD67QO7I1Q7ORLZD",
-      debug_logs: 0,
+      app_id: "FM6H6BZQGCY4WEUAXTKAYU3X",
+      debug_logs: 1,
       swPath: "serviceworker.js"
     });
