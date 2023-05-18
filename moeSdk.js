@@ -1,4 +1,3 @@
-<script type="text/javascript" src="moeSdk.js?v=10.0"></script>
  (function(i, s, o, g, r, a, m, n) {
       i.moengage_object = r;
       t = {};
