@@ -134,8 +134,8 @@
   </div> 
 
   <script type="text/javascript">
-    Moengage.cards.getUnClickedCardCount().then(unclickedCardCount = {
-    	console.log(unclickedCardCount); // unclickedCardCount is in Number format
+   let newCardCount =  Moengage.cards.getUnClickedCardCount().then(unclickedCardCount = {
+    	console.log(unclickedCardCount);
     document.getElementById("crdCount").innerHTML = newCardCount;
     });    
 </script>
