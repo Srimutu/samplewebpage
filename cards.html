@@ -130,12 +130,11 @@
 <body>
   <div>
   <img src = "https://picsum.photos/200/300" > 
+    <div id="crdCount"> </div>
   </div> 
 
   <script type="text/javascript">
-    Moengage.cards.getNewCardCount().then(newCardCount = {
-    	console.log(newCardCount); // newCardCount is in Number format
-    });
+    Moengage.cards.getNewCardCount().then(newCardCount = {document.getElementById("crdCount").innerHTML = newCardCount});
     
 </script>
   
