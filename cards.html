@@ -133,11 +133,15 @@
     <div id="crdCount"> this </div>
   </div> 
 
-  <script type="text/javascript">
-   let newCardCount =  Moengage.cards.getUnClickedCardCount().then(unclickedCardCount = {
-    	console.log(unclickedCardCount);
-    document.getElementById("crdCount").innerHTML = newCardCount;
-    });    
+  <script type="text/javascript">    
+    var newCardCount = Number(document.getElementById('moe-floating-notifications').textContent);
+
+if (number >= 1) {
+document.getElementById("moe-floating-notifications").style.display = "none";
+} else {
+document.getElementById("moe-floating-notifications").style.display = "flex";
+}
+    
 </script>
   
   
