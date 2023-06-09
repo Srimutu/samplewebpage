@@ -122,6 +122,15 @@
       }
     }
   });
+    
+    function hideBell(){
+ var newCardCount = Number(document.getElementById('moe-floating-notifications').textContent);
+if (newCardCount >= 1) {
+document.getElementById('moe-floating-icon').style.display = "flex";
+} else {
+document.getElementById('moe-floating-icon').style.display = "none";
+}
+    };
   </script>
 
 
