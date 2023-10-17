@@ -234,6 +234,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-MMQR9CG');</script>
 <!-- End Google Tag Manager -->
+
+<-- soft ask -->
+<script>
+	Moengage.call_web_push({
+    "soft_ask":true,
+    "main_class":"moe-main-class",
+    "allow_class":"moe-allow-class",
+    "block_class":"moe-block-class",
+}); </script>
+	
 </head>
 
 <body style="background-color:#112B3C;">
@@ -267,7 +277,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <!--input type="submit" value="Submit" class=btn1-->
 
         <!--/form-->
-        <button onclick="document.getElementById('fname').value;document.getElementById('email').value;" class="btn2" id="btn2">Submt</button>
+        <button onclick="Moengage.call_web_push();document.getElementById('fname').value;document.getElementById('email').value;" class="btn2" id="btn2">Submt</button>
       </div>
 
       <div class="centerPiece" style="width:350px;height:340px;border:1px solid red;position:absolute;left:400px;display:inline-block;">
