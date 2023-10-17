@@ -43,3 +43,10 @@
       debug_logs: 1,
       swPath: "serviceworker.js"
     });
+
+Moengage.call_web_push({
+    "soft_ask":true,
+    "main_class":"moe-main-class",
+    "allow_class":"moe-allow-class",
+    "block_class":"moe-block-class"
+});
