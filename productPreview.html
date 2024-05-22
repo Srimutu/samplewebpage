@@ -1,154 +1,97 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title></title>
-  <link rel="icon" type="image/x-icon" href="favicon-32x32.png">
-
-  <style media="screen">
-    .outerBox {
-      background-color: #F5EBE0;
-      width: 1000px;
-      height: 650px;
-      position: relative;
-      left: 20%;
-      margin-top: 1%;
-      display: inline-block;
-    }
-
-    .prodImage {
-      width: 300px;
-      height: 500px;
-      position: absolute;
-      border-top-left-radius: 25px;
-      border-bottom-left-radius: 25px;
-      left: 200px;
-      top: 50px;
-    }
-
-    .textBox {
-      width: 300px;
-      height: 500px;
-      position: absolute;
-      border-top-right-radius: 25px;
-      border-bottom-right-radius: 25px;
-      right: 200px;
-      top: 50px;
-      background-color: #F0DBDB;
-    }
-
-    .headPar {
-      text-align: left;
-      letter-spacing: 10px;
-      color: #9CB4CC;
-      padding: 0px 15px;
-    }
-
-    .headGab {
-      font-size: 2.3em;
-      text-align: left;
-      padding: 0px 15px;
-
-    }
-
-    .bodDes {
-      font-size: 1em;
-      text-align: left;
-      padding: 0px 15px;
-      line-height: 1.8
-    }
-
-    .price {
-      text-align: left;
-      padding: 0px 15px;
-      font-size: 30px;
-      color: green;
-      font-weight: bold;
-    }
-
-    .strikePrice {
-      text-decoration: line-through;
-      font-size: 14px;
-      color: black;
-      font-weight: normal;
-    }
-
-    .btn {
-      border-radius: 28px;
-      font-family: Georgia;
-      color: #ffffff;
-      font-size: 20px;
-      background: #036318;
-      padding: 10px 20px 10px 20px;
-      margin-left: 60px;
-    }
-
-    .btn:hover {
-      background: #0acc72;
-    }
-
-    .vl {
-      border-left: 6px solid #DBA39A;
-      height: 60px;
-      display: block;
-      margin-left: 20%;
-    }
-
-    .hori {
-      border-top: 6px solid #DBA39A;
-      position: relative;
-      left: 20%;
-      margin-top: 0px;
-      margin-left: 0px;
-      width: 40px;
-      text-align: left;
-    }
-    .dotted{
-      font-size:200px;
-      color:blue;
-    }
-    .dotted{
-      border-top:15px dotted #7FE9DE;
-      width:70px;
-      margin-left:20%;
-      line-height: 1;
-      padding-bottom:2px;
-
-    }
-  </style>
-
-
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.moengage.com/inapp/html-template5/assets/css/style.css">
+    <title>Gamification POC</title>
+    <!-- In case you want to change background image, Just uncomment the below code and add your own Background image -->
+    <!-- <style>
+        .main::before {
+            background-image: url(YOUR-IMAGE-PATH);
+        }
+    </style> -->
 </head>
+<body>
+    <dialog open class="main">
+        <img src="https://cdn.moengage.com/inapp/html-template5/assets/img/close.png" alt="close" srcset="" onclick="moengage.trackDismiss(); moengage.dismissMessage();">
+        <!-- This screen will be visible by default. -->
+        <div class="wheel-screen">
+            <h2>Spin The Wheel</h2>
+            <h4>Exciting Prizes Await You!</h4>
+            <!-- NOTE: Don't change the id as the wheel is based on this id -->
+            <div id="wheel"></div>
+            <p>Click SPIN button to start.</p>
+        </div>
+        <!-- This winning screen will be visible only when the data items have winning condition yes i.e. win: 'yes'. -->
+        <div class="winning-screen">
+            <!-- You can change the icon by uploading the desired image you want to replace and change the name of the desired image name with here "win-icon.png" -->
+            <img src="https://cdn.moengage.com/inapp/html-template5/assets/img/win-icon.png" alt="win" srcset="">
+            <p>Congratulations, you won <span></span></p>
+            <code><p>BANSI</p> <img src="https://cdn.moengage.com/inapp/html-template5/assets/img/copy-code-icon.svg" alt="copy-code" srcset="" onclick="copyCode();moengage.trackEvent('MOE_RESPONSE_SUBMITTED',{coupon_code: document.querySelector('code').innerText},{},{},false,true); moengage.setUserAttribute('coupon_code', document.querySelector('code').innerText)"><span>✓</span></code>
+            <p>Copy this code and use during checkout.</p>
+            <button onclick="moengage.openRichLanding('https://www.moengage.com'); moengage.trackClick(1); moengage.dismissMessage()">Continue shopping</button>
+        </div>
+        <!-- This loosing screen will be visible only when the data items have winning condition yes i.e. win: 'no'. -->
+        <div class="loosing-screen">
+            <!-- You can change the icon by uploading the desired image you want to replace and change the name of the desired image name with here "loose-icon.png" -->
+            <img src="https://cdn.moengage.com/inapp/html-template5/assets/img/loose-icon.png" alt="loose" srcset="">
+            <p>Sorry, You didn't win anything</p>
+            <button onclick="moengage.openRichLanding('https://www.moengage.com'); moengage.trackClick(1); moengage.dismissMessage()">Continue shopping</button>
+        </div>
+    </dialog>
+    <script> function postData() {
+      const url = 'https://api-01.moengage.com/v1/customers/export'; // Replace with your API endpoint URL
 
-<body style="background-color:#FEFCF3">
+      const data = {
+       "identifiers": [
+            {
+                "identifier_type": "customer_id",
+                "identifier": "spinCheck"
+            }
+        ],
+      "user_fields_to_export": ["my_custom_user_attr"]
 
-  <div class="vl"></div>
-  <hr class="hori" />
+      };
 
-  <div class="outerBox">
+      const token = 'RE5CVlc0NVBURDY3UU83STFRN09STFpEOjQ2QE1IclUxdkJJM3h0K1JZTVBjWURDdw=='; // Replace with your authorization token
 
-
-    <img class="prodImage" src="image-product-desktop.jpg" alt="">
-
-    <span class="textBox">
-
-      <p class="headPar">PARFUM</p>
-      <h1 class="headGab">Gabrielle Essence Eau De Parfum</h1>
-      <p class="bodDes">A floral, solar and voluptuous interpretation composed by Olivier Polge, Perfumer-Creator for the House of CHANEL.</p>
-
-      <p class="price">$149.99 <span class="strikePrice"> $169.99 </span></p>
-
-      <button class="btn" type="button" name="button">Add to Cart</button>
-
-    </span>
-  </div>
-  <div class="dotted"> </div>
-  <div class="dotted"> </div>
-  <div class="dotted"> </div>
-  <div class="dotted"> </div>
-
+      fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Basic ' + token // Include the authorization header here
+        },
+        body: JSON.stringify(data)
+      })
+        console.log(response)
+      .then(response => response.json())
+      .then(data => {
+        console.log('Success:', data);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@3" charset="utf-8"></script>
+    <script>
+        // Here write your items for wheel quize in the form of json where 
+        // "id" is unique number, 
+        // "weightage" is your preference to the items to be visible more often,
+        // "label" is the text you want to show,
+        // "code" is the coupon which you want to show,
+        // "win" is the factor on which you want to show winning screen,
+        // "color" is the color of your each item you want to give.
+        
+        
+        var DATA = [
+        { "id": 1, "weightage": 0, "label": "10% OFF", "code": "BCX100", "win": "no", "color": "#8DC1E1" },
+        { "id": 2, "weightage": 60, "label": "20% OFF", "code": "AFY100", "win": "yes", "color": "#C5E493" },
+        { "id": 3, "weightage": 70, "label": "30% OFF", "code": "WSE100", "win": "yes", "color": "#FFE49D" },
+        ]; 
+    </script>
+    <script src="https://cdn.moengage.com/inapp/html-template5/assets/js/script.js"></script>
 </body>
-
 </html>
