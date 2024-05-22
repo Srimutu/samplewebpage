@@ -41,39 +41,36 @@
             <button onclick="moengage.openRichLanding('https://www.moengage.com'); moengage.trackClick(1); moengage.dismissMessage()">Continue shopping</button>
         </div>
     </dialog>
-    <script> function postData() {
-      const url = 'https://api-01.moengage.com/v1/customers/export'; // Replace with your API endpoint URL
+    <script> 
+
+        {
+      const url = 'http://localhost:3000/api/proxy'; // Replace with your proxy server URL
 
       const data = {
-       "identifiers": [
-            {
-                "identifier_type": "customer_id",
-                "identifier": "spinCheck"
-            }
+        "identifiers": [
+          {
+            "identifier_type": "customer_id",
+            "identifier": "spinCheck"
+          }
         ],
-      "user_fields_to_export": ["my_custom_user_attr"]
-
+        "user_fields_to_export": ["my_custom_user_attr"]
       };
-
-      const token = 'RE5CVlc0NVBURDY3UU83STFRN09STFpEOjQ2QE1IclUxdkJJM3h0K1JZTVBjWURDdw=='; // Replace with your authorization token
 
       fetch(url, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Basic ' + token // Include the authorization header here
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify(data),
       })
-        console.log(response)
-      .then(response => response.json())
-      .then(data => {
-        console.log('Success:', data);
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
-    }
+        .then(response => response.json())
+        .then(data => {
+          console.log('Success:', data);
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+            
     </script>
     <script src="https://cdn.jsdelivr.net/npm/d3@3" charset="utf-8"></script>
     <script>
